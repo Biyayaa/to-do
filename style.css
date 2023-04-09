@@ -20,7 +20,7 @@ body {
     width: 300px;
   }
   
-  button {
+  #addBtn {
     background-color: #4caf50;
     border: none;
     border-radius: 5px;
@@ -102,16 +102,16 @@ body {
   /* Styles for mobile */
 @media only screen and (max-width: 600px) {
     input[type="text"] {
-      width: 100%;
+      width: 90%;
       margin-right: 0;
       margin-bottom: 10px;
     }
   
-    button {
+    #delete-btn,  #edit-btn {
       width: 100%;
     }
   
     #task {
-      width: 100%;
+      width: 90%;
     }
   }
