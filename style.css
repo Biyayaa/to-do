@@ -1,84 +1,117 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 body {
-    background-color: rgba(255, 0, 0, 0.164);
-    justify-content: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  main {
     display: flex;
-}
-
-main {
-    width: 37.5rem;
-    padding: 1.25rem;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.366);
-    background-color: white;
-    text-align: center;
-    margin-top: 12.5rem;
-}
-
-#input {
-    width: 31.25rem;
-    height: 2.5;
-    background-color: white;
-    color: black;
-    border: 0.125rem solid blue;
-    outline: blue;
-    padding: 0.625rem;
-    margin-bottom: 1.25px;
-    font-size: 0.938rem;
-}
-
-#addBtn {
-    height: 2.5rem;
-    width: 3.125rem;
-    background-color: rgba(0, 0, 255, 0.777);
-    color: white;
-    border: none;
-}
-
-#task {
-    margin-top: 1.25rem;
-    color: white;
-}
-
-.event {
-    background-color: rgba(0, 0, 255, 0.724);
+    flex-direction: column;
     align-items: center;
-    text-align: left;
-    margin-top: 0.625rem;
-    padding: 0.625rem;
+    margin-top: 50px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 300px;
+  }
+  
+  button {
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #3e8e41;
+  }
+  
+  #taskStatus {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  #error-message {
+    color: red;
+  }
+  
+  #success-message {
+    color: green;
+  }
+  
+  #task {
+    margin-top: 20px;
+    width: 500px;
+  }
+  
+  .event {
     display: flex;
     justify-content: space-between;
-}
-
-/* .edit-delete {
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .edit-delete {
     display: flex;
-    justify-content: right;
-    float: right;
-    ma
-} */
-
-#delete-btn {
-    background-color: red;
-    color: white;
+  }
+  
+  #edit-btn {
+    background-color: #2196f3;
     border: none;
-    padding: 0.313rem 0.625rem;
+    border-radius: 5px;
+    color: #fff;
     cursor: pointer;
-    margin-left: 0.625rem;
-}
-
-#edit-btn {
-    background-color: rgba(255, 255, 0, 0.59);
-    color: white;
+    font-size: 16px;
+    margin-right: 10px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #edit-btn:hover {
+    background-color: #0b7dda;
+  }
+  
+  #delete-btn {
+    background-color: #f44336;
     border: none;
-    padding: 0.313rem 0.625rem;
+    border-radius: 5px;
+    color: #fff;
     cursor: pointer;
-    margin-left: 0.625rem;
-}
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #delete-btn:hover {
+    background-color: #d32f2f;
+  }
 
-/* .edit-delete-btn{
-    justify-content: space-between;
-} */
+
+  /* Styles for mobile */
+@media only screen and (max-width: 600px) {
+    input[type="text"] {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    button {
+      width: 100%;
+    }
+  
+    #task {
+      width: 100%;
+    }
+  }

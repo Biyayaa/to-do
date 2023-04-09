@@ -2,13 +2,16 @@ let input = document.getElementById("input");
 let task = document.getElementById("task");
 let arr = [];
 
+let taskStatus = document.getElementById('taskStatus');
+
+
 
 function displayTasks() {
     task.innerHTML = "";
     arr.forEach((el, i)=>{
         task.innerHTML += `
         <h2 id="event" class="event">
-            ${i} ${el}
+            ${i +1} ${el}
             <div class="edit-delete">
                 <button onclick="editTask(${i})" id="edit-btn">Edit</button>
                 <button onclick="deleteTask(${i})" id="delete-btn">Delete</button>
@@ -19,8 +22,21 @@ function displayTasks() {
 }
 
 function add() {
-    arr.push(input.value);
-    displayTasks();
+    if (input.value == "") {
+        // alert("Type something")
+        taskStatus.innerHTML = "<p id='error-message'> Add a task first</p>"
+        // setTimeout(() => {
+        //     taskStatus.style.display = "none" 
+        // }, 10000);
+    }
+    else{
+        arr.push(input.value);
+        displayTasks();
+        taskStatus.innerHTML =  "<p id='sucess-message'>task updated successfully!!!</p>"
+        setTimeout(() => {
+            taskStatus.style.display = "none" 
+        }, 5000);
+    }
 }
 
 function deleteTask(index) {
@@ -36,8 +52,3 @@ function editTask(index) {
         displayTasks();
     }
 }
-
-
-// let spliceArr = ['cat', 'dog', 'sheep']
-// spliceArr.splice(1, 1, 'mango', 'pear');
-// console.log(spliceArr);
