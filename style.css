@@ -2,27 +2,30 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-  }
-  
-  main {
+    display: flex;
+    justify-content: center;
+}
+
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.476);
-  }
-  
-  input[type="text"] {
+    width: 80%;
+}
+
+input[type="text"] {
     margin-top: 20px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid black;
     border-radius: 5px;
     margin-right: 10px;
-    width: 300px;
-  }
-  
-  #addBtn {
+    width: 60%;
+}
+
+#addBtn {
     background-color: #4caf50;
     border: none;
     border-radius: 5px;
@@ -31,31 +34,31 @@ body {
     font-size: 16px;
     padding: 10px 20px;
     transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background-color: #3e8e41;
-  }
-  
-  #taskStatus {
+}
+
+#taskStatus {
     margin-top: 20px;
     text-align: center;
-  }
-  
-  #error-message {
+}
+
+#error-message {
     color: red;
-  }
-  
-  #success-message {
+}
+
+#success-message {
     color: green;
-  }
-  
-  #task {
+}
+
+#task {
     margin-top: 20px;
     width: 500px;
-  }
-  
-  .event {
+}
+
+.event {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -63,13 +66,13 @@ body {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
-  }
-  
-  .edit-delete {
+}
+
+.edit-delete {
     display: flex;
-  }
-  
-  #edit-btn {
+}
+
+#edit-btn {
     background-color: #2196f3;
     border: none;
     border-radius: 5px;
@@ -79,13 +82,13 @@ body {
     margin-right: 10px;
     padding: 5px 10px;
     transition: background-color 0.3s ease;
-  }
-  
-  #edit-btn:hover {
+}
+
+#edit-btn:hover {
     background-color: #0b7dda;
-  }
-  
-  #delete-btn {
+}
+
+#delete-btn {
     background-color: #f44336;
     border: none;
     border-radius: 5px;
@@ -94,26 +97,27 @@ body {
     font-size: 16px;
     padding: 5px 10px;
     transition: background-color 0.3s ease;
-  }
-  
-  #delete-btn:hover {
+}
+
+#delete-btn:hover {
     background-color: #d32f2f;
-  }
+}
 
 
-  /* Styles for mobile */
+/* Styles for mobile */
 @media only screen and (max-width: 600px) {
     input[type="text"] {
-      width: 90%;
-      margin-right: 0;
-      margin-bottom: 10px;
+        width: 90%;
+        margin-right: 0;
+        margin-bottom: 10px;
     }
-  
-    #delete-btn,  #edit-btn {
-      width: 100%;
+
+    #delete-btn,
+    #edit-btn {
+        width: 100%;
     }
-  
+
     #task {
-      width: 90%;
+        width: 90%;
     }
-  }
+}

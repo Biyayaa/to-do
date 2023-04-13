@@ -1,10 +1,8 @@
 let input = document.getElementById("input");
 let task = document.getElementById("task");
-let arr = [];
+let arr = JSON.parse(localStorage.getItem("tasks")) || [];
 
 let taskStatus = document.getElementById('taskStatus');
-
-
 
 function displayTasks() {
     task.innerHTML = "";
@@ -21,12 +19,15 @@ function displayTasks() {
     });
 }
 
+displayTasks(); // call the function when the page loads to display existing tasks
+
 function add() {
     if (input.value == "") {
         taskStatus.innerHTML = "<p id='error-message'> Add a task first!!!</p>"
     }
     else{
         arr.push(input.value);
+        localStorage.setItem("tasks", JSON.stringify(arr)); // save the updated task array to local storage
         displayTasks();
         taskStatus.innerHTML =  "<p id='sucess-message'>task updated successfully!!!</p>"
         setTimeout(() => {
@@ -37,6 +38,7 @@ function add() {
 
 function deleteTask(index) {
     arr.splice(index, 1);
+    localStorage.setItem("tasks", JSON.stringify(arr)); // save the updated task array to local storage
     displayTasks();
     taskStatus.innerHTML =  "<p id='error-message'>a task has been deleted!!</p>"
         setTimeout(() => {
@@ -48,7 +50,8 @@ function deleteTask(index) {
 function editTask(index) {
     let updatedTask = prompt("Enter updated task:", arr[index]);
     if (updatedTask !== null) {
-        arr[index] = updatedTask; 
+        arr[index] = updatedTask;
+        localStorage.setItem("tasks", JSON.stringify(arr)); // save the updated task array to local storage
         displayTasks();
     }
 }
